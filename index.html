@@ -56,12 +56,28 @@
 
 <body>
 
+<section class="hero teaser" style="padding-top: 2.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-top: 0; margin-bottom: 0;">
+      <div class="column is-full-width" style="padding-top: 0; padding-bottom: 0;">
+        <h3 class="has-text-centered" style="font-size: 2.4rem; font-weight: 800; line-height: 1.16; letter-spacing: -0.01em; margin-top: 0; margin-bottom: 16px;">
+          Multiple modalities, many applications.<br>
+          <span style="color: #b1040e;">One unified verification framework.</span>
+        </h3>
+        <p class="has-text-centered" style="max-width: 760px; margin: 0 auto 26px auto; font-size: 1.05em; color: #555;">
+          We present LLM-as-a-Verifier, a general-purpose framework that provides fine-grained feedback for any modality without requiring additional training. By leveraging the full distribution of scoring-token logits, our method captures evaluation uncertainty and enables verification to scale along three dimensions: <em>score granularity</em>, <em>repeated evaluation</em>, and <em>criteria decomposition</em>.
+        </p>
+        <img src="./figures/fig_teas.png" alt="LLM-as-a-Verifier overview" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
+    </div>
+  </div>
+</section>
+
 <section class="hero">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
-          <h2 class="title is-2 publication-title" style="font-size: 2.25rem; line-height: 1.15;"><strong>LLM-as-a-Verifier:<br>A General-Purpose Verification Framework</strong></h2>
+          <h2 class="title is-2 publication-title" style="font-size: 2.25rem; line-height: 1.15;"><img src="./figures/hq.png" alt="" style="height: 1.2em; vertical-align: -0.25em; margin-right: 0.05em; position: relative; left: -0.35em;"><strong>LLM-as-a-Verifier:<br>A General-Purpose Verification Framework</strong></h2>
         <div class="is-size-5 publication-authors" style="margin-top: 18px; color: #000;">
           <span class="author-block">
             <a href="https://jackyk02.github.io/" target="_blank">Jacky Kwok</a><sup>1</sup>,&nbsp;
@@ -75,11 +91,11 @@
             <a href="https://www.azaliamirhoseini.com/" target="_blank">Azalia Mirhoseini</a><sup>1</sup>
           </span>
         </div>
-        <div class="is-size-6 publication-authors" style="margin-top: 12px; margin-bottom: 18px;">
-          <span class="author-block">
-            <sup>1</sup>Stanford University&nbsp;&nbsp;&nbsp;
-            <sup>2</sup>UC Berkeley&nbsp;&nbsp;&nbsp;
-            <sup>3</sup>NVIDIA Research
+        <div class="is-size-6 publication-authors" style="margin-top: 14px; margin-bottom: 18px;">
+          <span class="author-block" style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 4px 22px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><img src="./figures/stanford.avif" alt="" style="height: 1.85em; width: auto;"><sup>1</sup>Stanford University</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><img src="./figures/berkeley.svg" alt="" style="height: 1.6em; width: auto;"><sup>2</sup>UC Berkeley</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><img src="./figures/nvidia.png" alt="" style="height: 1.35em; width: auto;"><sup>3</sup>NVIDIA Research</span>
           </span>
         </div>
           <div>
@@ -124,22 +140,6 @@
           </div>
         </div>
       </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <video autoplay loop muted playsinline poster="./figures/teaser_llm.png" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
-          <source src="./figures/teaser_anim.mp4" type="video/mp4">
-          <img src="./figures/teaser_llm.png" alt="LLM-as-a-Verifier overview" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
-        </video>
-        <p class="has-text-justified" style="margin-top: 15px; margin-bottom: 20px; font-size: 0.95em;">
-          Multiple modalities, many applications, one unified verification framework.
-          We present LLM-as-a-Verifier, a general-purpose framework that provides fine-grained feedback for any modality without requiring additional training. By leveraging the full distribution of scoring-token logits, our method captures evaluation uncertainty and enables verification to scale along three dimensions: <em>score granularity</em>, <em>repeated evaluation</em>, and <em>criteria decomposition</em>. The resulting fine-grained feedback can be used for test-time scaling, progress tracking, and RL.
-        </p>
-    </div>
-  </div>
 </section>
 
 <section class="section">
