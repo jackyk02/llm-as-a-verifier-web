@@ -1,6 +1,6 @@
-# CoVer-VLA
+# LLM-as-a-Verifier
 
-This is the repository that contains source code for the CoVer-VLA project page.
+This is the repository that contains source code for the LLM-as-a-Verifier project page.
 
 # References
 This webpage is adapted from [RoboMonkey](https://robomonkey-vla.github.io/).
