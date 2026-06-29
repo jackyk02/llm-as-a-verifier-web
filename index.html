@@ -196,15 +196,20 @@
     @media (max-width:680px){ .flow2{ flex-direction:column; align-items:stretch; } .flow-box{ max-width:none; } .flow-arrow{ transform:rotate(90deg); min-width:0; height:34px; } }
 
     /* ---- Left section-progress nav (Polaris-style) ---- */
-    .side-nav { position:fixed; left:20px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:13px; }
-    .side-nav a { display:flex; align-items:center; gap:10px; text-decoration:none; color:#b0b0b0; font-family:'Inter',-apple-system,sans-serif; font-size:11.5px; font-weight:600; transition:color .2s; }
-    .side-nav a .dot { width:9px; height:9px; border-radius:50%; background:#d4d4d4; transition:all .2s; flex:0 0 auto; }
-    .side-nav a .lbl { white-space:nowrap; opacity:0.6; transition:opacity .2s; }
+    .side-nav { position:fixed; left:26px; top:50%; transform:translateY(-50%); z-index:25; display:flex; flex-direction:column; gap:17px; padding-left:6px;
+      opacity:0; pointer-events:none; transition:opacity .4s ease, transform .4s ease; }
+    .side-nav.visible { opacity:1; pointer-events:auto; }
+    .side-nav::before { content:''; position:absolute; left:11px; top:5px; bottom:5px; width:2px; background:#e8e8e8; border-radius:2px; }
+    .side-nav a { position:relative; display:flex; align-items:center; gap:13px; text-decoration:none; color:#a6a6a6;
+      font-family:'Inter',-apple-system,sans-serif; font-size:11.5px; font-weight:600; letter-spacing:0.02em; transition:color .2s; }
+    .side-nav a .dot { width:9px; height:9px; border-radius:50%; background:#fff; border:2px solid #cfcfcf; transition:all .22s ease; flex:0 0 auto; z-index:1; }
+    .side-nav a .lbl { white-space:nowrap; opacity:0.5; transition:opacity .2s, transform .2s; }
     .side-nav a:hover { color:#b1040e; }
     .side-nav a:hover .lbl { opacity:1; }
+    .side-nav a:hover .dot { border-color:#b1040e; }
     .side-nav a.active { color:#b1040e; }
     .side-nav a.active .lbl { opacity:1; }
-    .side-nav a.active .dot { background:#b1040e; transform:scale(1.35); box-shadow:0 0 0 4px rgba(177,4,14,0.12); }
+    .side-nav a.active .dot { background:#b1040e; border-color:#b1040e; box-shadow:0 0 0 4px rgba(177,4,14,0.14); }
     @media (max-width:1180px){ .side-nav { display:none; } }
     .tldr-caption { font-family:'Inter',-apple-system,sans-serif; color:#7a7a7a; font-size:14px; line-height:1.7; max-width:860px; margin:18px auto 0 auto; }
     .tldr-caption strong { color:#4a4a4a; }
@@ -1007,8 +1012,15 @@ Note: We use a letter-based scale instead of digits to enable logprob extraction
   var ids=['overview','results','motivation','methodology','analysis','experiments','appendix'];
   var links={};
   document.querySelectorAll('.side-nav a').forEach(function(a){ links[a.getAttribute('data-target')]=a; });
+  var nav=document.querySelector('.side-nav');
+  var trig=document.getElementById('results');
   var S=ids.map(function(id){ var el=document.getElementById(id); return el?{id:id,el:el}:null; }).filter(Boolean);
   function onScroll(){
+    // show the nav only once we've scrolled to/past the Test-Time Scaling (results) section
+    if(nav){
+      var show = trig ? (trig.getBoundingClientRect().top <= 100) : (window.scrollY > 400);
+      nav.classList.toggle('visible', show);
+    }
     var y=140, best=null, bestTop=-Infinity;
     S.forEach(function(o){
       var t=o.el.getBoundingClientRect().top;
