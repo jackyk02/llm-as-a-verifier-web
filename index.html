@@ -582,7 +582,7 @@ Note: We use a letter-based scale instead of digits to enable logprob extraction
         <div class="column is-full-width">
           <div class="tagline" style="font-size:22px;">Probabilistic Pivot Tournament (PPT)</div>
           <div class="card-surface">
-            <img src="./figures/ppt.png" alt="Probabilistic Pivot Tournament" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
+            <img src="./figures/pivot_tournament.png" alt="Probabilistic Pivot Tournament" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
           </div>
           <p class="tldr-caption has-text-centered">
             To select the best of \(N\) candidates under a constrained verification budget, PPT compares each candidate against a small set of \(k \ll N\) pivots, cutting cost from \(\mathcal{O}(N^2)\) to \(\mathcal{O}(Nk^2)\).
@@ -672,7 +672,7 @@ Note: We use a letter-based scale instead of digits to enable logprob extraction
         <div class="column is-full-width">
           <details class="sub-accordion"><summary>What drives repeated evaluation?</summary><div class="acc-body">
           <p class="tldr-caption" style="max-width:900px; text-align:left;">
-            <strong>Variance reduction.</strong> LLM-as-a-Verifier <img src="./figures/hq.png" alt="" style="height:1.15em; vertical-align:-0.25em;"> consistently <strong>outperforms LLM-as-a-Judge</strong> <img src="./figures/judge.png" alt="" style="height:1.05em; vertical-align:-0.2em;">, achieving <strong>77.4%</strong> verification accuracy while eliminating ties entirely across all repeated verification budgets. Even at \(k = 16\), where repeated verification reduces judge ties, the verifier still maintains <strong>7.2%</strong> higher accuracy.
+            <strong>Variance reduction.</strong> LLM-as-a-Verifier <img src="./figures/robot.png" alt="" style="height:1.15em; vertical-align:-0.25em;"> consistently <strong>outperforms LLM-as-a-Judge</strong> <img src="./figures/judge.png" alt="" style="height:1.05em; vertical-align:-0.2em;">, achieving <strong>77.4%</strong> verification accuracy while eliminating ties entirely across all repeated verification budgets. Even at \(k = 16\), where repeated verification reduces judge ties, the verifier still maintains <strong>7.2%</strong> higher accuracy.
           </p>
           <div class="card-surface" style="margin-top:16px;">
             <img src="./figures/judge_vs_verifier.png" alt="Verifier vs Judge: accuracy and tie rate across repeated evaluations" style="width: 100%; max-width: 1100px; display: block; margin-left: auto; margin-right: auto;">
